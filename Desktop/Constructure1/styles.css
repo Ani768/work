@@ -1,0 +1,322 @@
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+
+  }
+  
+  .gradient-line {
+    width: 8px;
+    height: 50px;
+    background: linear-gradient(to bottom,#FFE70E 9%, #FF780E 75.5%, #FF0F0F 93%);
+    margin-right: 10px;
+}
+  /* Header Section */
+  .hero-section {
+    background-image: url("./assets/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: white;
+    padding: 50px 20px;
+    position: relative;
+    z-index: 1; /* Ensure text is above the overlay */
+  }
+  
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0C2061;
+    opacity: 80%; /* Construction blue with 50% opacity */
+    z-index: -1; /* Make sure the overlay is behind the content */
+  }
+  
+  .hero-section nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo{
+   display: flex;
+  }
+  .logo img {
+    width: 70px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin: 0 15px;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .hero-content {
+    max-width: 500px;
+    max-height: 580px;
+    margin-top: 100px;
+  }
+  
+  .hero-content h1 {
+    font-size: 48px;
+    line-height: 1.2;
+  }
+  
+  .hero-content span {
+    color: #ffc107;
+  }
+  
+  .cta-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color:#F8E224;
+    color: black;
+    text-decoration: none;
+    font-family: 'Josefin Slab';
+    border-radius: 25px;
+  }
+  
+  .hero-image {
+    position: relative; /* Create a stacking context for absolute positioning */
+    width: 500px; /* Set the width to match the circle */
+    height: 500px; /* Set the height to match the circle */
+    padding-left: 1000px;
+  }
+  
+  .hero-image::before {
+    content: "";
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    width: 500px; /* Width of the yellow circle */
+    height: 500px; /* Height of the yellow circle */
+    background: rgba(248, 226, 36, 0.7); /* Yellow color with 70% opacity */
+    border-radius: 50%; /* Makes it a circle */
+    transform: translate(-50%, -50%); /* Center the circle */
+    z-index: 0; /* Places it behind the image */
+  }
+  
+  .hero-image img {
+    overflow: hidden;
+    position: absolute; /* Position the image absolutely within the hero-image */
+    top: 50%; /* Center the image vertically */
+    left: 48%; /* Center the image horizontally */
+    width: auto; /* Maintain original width */
+    height: auto; /* Maintain original height */
+    max-width: none; /* Allow the image to exceed max-width */
+    max-height: 100%; /* Ensure the image can grow, but stays within the circle */
+    transform: translate(-50%, -50%); /* Center the image */
+    z-index: 1; /* Ensure the image is above the yellow circle */
+    object-fit: contain; /* Ensures the image fits within the circle without being cut off */
+    padding-bottom: 150px;
+    padding-left: 100px;
+  }
+  /* About Section */
+  .about-section {
+    display: flex;
+    padding: 50px;
+    background-color: #ffffff;
+  }
+  
+  .about-content {
+    flex: 1;
+    padding-right: 50px;
+    padding-left: 80px;
+    padding-top: 400px;
+  }
+  
+  .about-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .stats {
+    display: flex;
+    gap: 50px;
+  }
+  
+  .stat {
+    text-align: center;
+  }
+  
+  .stat h3 {
+    font-size: 24px;
+    color: #ffc107;
+  }
+
+  .cropped-image {
+    left: -50px; /* Adjust this value to crop the left side */
+}
+
+
+
+.image-container {
+  background-image: url(./assets/about-image-1.jpeg);
+  background-size: cover; /* Ensure the entire image is displayed */
+  background-repeat: no-repeat; /* Prevent repeating of the background image */ /* Full height of the container */
+  object-fit:cover; /* Maintain aspect ratio */
+  position: relative; /* Allow overlay to position correctly */
+  z-index: 1;/* Inline block for proper layout */
+}
+
+.image-container::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFE70E80;
+
+  opacity: 50%; 
+  z-index: -1;
+}
+
+  .about-images {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .about-images img {
+    border-radius: 10px;
+    height: 536px;
+    width: 500px;
+    border-radius: 0px;
+    padding-right: 70px;
+  }
+  
+  /* Team Section */
+  .team-section {
+    background-color: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .team-section h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+
+
+  
+  .team-members {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .team-members-1 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  
+  .team-member {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+ 
+   
+  }
+  
+  .team-member img {
+    object-fit: cover;
+    border-radius: 0;
+    height: 435px;
+    width: 425px;
+  }
+  
+  .team-member h3 {
+    margin-top: 15px;
+    font-size: 20px;
+  }
+  
+  .team-member p {
+    font-size: 16px;
+    color: gray;
+  }
+
+  .team-section {
+    text-align: center;
+  }
+  
+  .team-member img {
+    margin-bottom: 15px;
+  }
+  
+  .team-member h3 {
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  
+  .team-section .social-icons a {
+    margin: 0 10px;
+    color: #333;
+  }
+  
+  .team-section .social-icons a:hover {
+    color: #ffc107; /* Customize hover color if needed */
+  }
+  
+  .team-section {
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  .team-member {
+    margin-bottom: 30px;
+    background-color: transparent;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  
+  .team-image {
+    width: 70%; /* Adjust the width to make the images smaller */
+    max-width: 300px; /* Cap the maximum width */
+    height: auto;
+    border-radius: 0;
+    margin-bottom: 15px;
+  }
+  
+  .team-member h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .team-member p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .social-icons a {
+    margin: 0 10px;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .social-icons a:hover {
+    color: #ffc107; /* Hover color */
+  }
+  
+  
